@@ -1,18 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Aula 10 de novembro</title>
+
+    <!-- FONTE PERSONALIZADA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --cor-principal: #3ba783; /* Cor verde água do layout */
+            --cor-botao: #6d1b1b;     /* Cor do botão Acessar */
+            --fonte-padrao: "Playfair Display", serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--fonte-padrao);
+            /* Substitua o link abaixo pela imagem do seu cachorro, se tiver uma local */
+            background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: var(--cor-principal);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #fff; /* Linha branca sutil */
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #fff;
+            color: var(--cor-principal);
+        }
+
+        /* Área Principal */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; /* Joga o formulário para a direita */
+            align-items: center;
+            padding-right: 10%;
+        }
+
+        /* Formulário de Login */
+        .login-container {
+            background-color: var(--cor-principal);
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-align: center;
+            border: 2px solid #5ad1a9; /* Borda clara */
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            object-fit: cover;
+            border: 3px solid #fff;
+            /* Imagem de exemplo do avatar, substitua se necessário */
+            background-image: url('https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .login-container h2 {
+            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #fff;
+            margin-bottom: 25px;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .options input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .options a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .options a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-acessar {
+            background-color: var(--cor-botao);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            width: 60%;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-family: var(--fonte-padrao);
+            transition: 0.3s;
+        }
+
+        .btn-acessar:hover {
+            background-color: #8c2222;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Reaprendendo uso do Git e parâmetros</h1>
-    <a href="sobre.html">Clique Aqui</a>
 
-    <style> 
-        body {
-            background-color:aquamarine;
-        }
-    </style>
+    <header>
+        <div class="logo-text">Suas melhores experiências com a gente!</div>
+        <nav class="nav-buttons">
+            <a href="index.html">Página Inicial</a>
+            <!-- Mantive o link para o sobre.html aqui conforme solicitado -->
+            <a href="sobre.html">Sobre</a>
+            <a href="#">Minha conta</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <div class="avatar"></div>
+            <h2>Comece aqui</h2>
+            
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="usuario">USUÁRIO</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="senha">SENHA</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="lembrar"> Lembrar-me
+                    </label>
+                    <a href="#">Esqueci a senha</a>
+                </div>
+                
+                <button type="submit" class="btn-acessar">Acessar</button>
+            </form>
+        </div>
+    </main>
+
 </body>
 </html>
