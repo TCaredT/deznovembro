@@ -7,3 +7,6 @@ M - Modified # mexido, mas não salvo
 Depois do git add. -> passa pra staged
 git commit -m "algo pra descrever o que foi feito"
 git push
+
+Atualizando meu código
+git add .\nomedoarquivo.algumacoisaqueleleé
