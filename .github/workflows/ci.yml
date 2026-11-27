@@ -1,26 +1,25 @@
-#cd name: CI - Testes e Docker
+name: Deploy VM
 
 on:
-  pull_request:
-    branches: [develop]
   push:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
-  testes:
-    name: Executar testes
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Baixar repositório
-        uses: actions/checkout@v6
-      - name: Preparar Node.js
-        uses: actions/setup-node@v7
+      - name: Clonar projeto na VPS
+        uses: appleboy/ssh-action@v1
         with:
-          node-version: "24"
-      - name: Executar testes
-        run: npm test
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 22
+          script: |
+            cd /var/www/html
+
+            git clone https://github.com/TCaredT/deznovembro.git
 
